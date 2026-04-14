@@ -1,8 +1,8 @@
 public class MissingNumber {
     public static int missingN(int[] arr){
         int res = arr.length;
-        for (int i = 0;i< arr.length ; i++){
-            res += i - arr[i];
+        for (int i=0;i<arr.length;i++){
+            res += i-arr[i];
         }
         return res;
     }
@@ -12,3 +12,9 @@ public class MissingNumber {
         System.out.println(missingN(arr));
     }
 }
+
+//int res = arr.length;
+//        for (int i = 0;i< arr.length ; i++){
+//res += i - arr[i];
+//        }
+//        return res;
