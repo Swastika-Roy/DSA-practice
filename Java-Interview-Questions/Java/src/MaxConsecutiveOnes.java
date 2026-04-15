@@ -10,6 +10,15 @@ public class MaxConsecutiveOnes {
             maxCount = Math.max(count,maxCount);
         }
         return maxCount;
+//        int count = 0; int maxcount=0;
+//        for (int i : arr){
+//            if(i==1){
+//                count++;
+//            }
+//            else count=0;
+//            maxcount= Math.max(count,maxcount);
+//        }
+//       return maxcount;
     }
 
     public static void main(String[] args) {
@@ -18,3 +27,5 @@ public class MaxConsecutiveOnes {
 
     }
 }
+
+
