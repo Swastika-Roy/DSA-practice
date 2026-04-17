@@ -16,16 +16,16 @@ public class PalindromeString {
     }
     //this func actually doing reverse
     public static String PalindromeStringFunc(String s){
-        char[] ch  = s.toCharArray();
-        int st = 0 , end = ch.length-1;
-        while(st<end){
-            char temp = ch[st];
-            ch[st] = ch[end];
-            ch[end] = temp;
-            st++;
-            end--;
-        }
-        return String.valueOf(ch);
+       char[] ch = s.toCharArray();
+       int st=0; int end = ch.length-1;
+       while (st < end){
+           char temp = ch[st];
+           ch[st] = ch[end];
+           ch[end] = temp;
+           st++;
+           end--;
+       }
+       return String.valueOf(ch);
     }
     public static Boolean PalindromeStringFuncWithOutExtraSpace(String s){
         s = s.toLowerCase().replaceAll("[^A-Za-z0-9]","");
@@ -43,3 +43,14 @@ public class PalindromeString {
     }
 
 }
+//
+//char[] ch  = s.toCharArray();
+//        int st = 0 , end = ch.length-1;
+//        while(st<end){
+//char temp = ch[st];
+//ch[st] = ch[end];
+//ch[end] = temp;
+//st++;
+//end--;
+//        }
+//        return String.valueOf(ch);
