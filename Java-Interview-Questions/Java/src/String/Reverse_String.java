@@ -2,14 +2,15 @@ package String;
 
 public class Reverse_String {
     public static void reverseString(char[] arr) {
-        int st = 0 , end = arr.length-1;
-        while(st<end){
-            char temp = arr[st];
-            arr[st] = arr[end];
-            arr[end] = temp;
-            st++;
-            end--;
-        }
+       int st = 0; int end = arr.length-1;
+       while(st < end){
+           char temp = arr[st];
+           arr[st] = arr[end];
+           arr[end] = temp;
+           st++;
+           end--;
+       }
+
     }
 
     public static void main(String[] args) {
