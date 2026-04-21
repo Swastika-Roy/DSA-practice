@@ -3,6 +3,13 @@ public class GCDOfTwoNumbers {
         a = Math.abs(a);
         b = Math.abs(b);
 
+//        while(b!=0){
+//            int temp = b;
+//            b = a%b;
+//            a = temp;
+//        }
+//        return Math.abs(a);
+
         if(b==0){
             return a;
         }
@@ -15,11 +22,11 @@ public class GCDOfTwoNumbers {
     }
 
     public static int gcdIterative(int a , int b){
-        while(b!=0){
-            int temp = b;
-            b = a%b;
-            a = temp;
-        }
-        return Math.abs(a);
+       while(b!=0){
+           int temp = b;
+           b = a%b;
+           a = temp;
+       }
+       return Math.abs(a);
     }
 }
