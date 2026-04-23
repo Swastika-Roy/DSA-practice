@@ -2,14 +2,14 @@
 
 public class sortColorsDNFAlgo {
     public static void DNFAlgo(int[] arr){
-        int st = 0 , mid = 0, end = arr.length-1;
-        while (mid<=end){
-            if(arr[mid]==0){
+        int st=0;int mid=0;int end=arr.length-1;
+        while(mid <=end){
+            if(arr[mid] == 0){
                 swap(arr,st,mid);
                 st++;
                 mid++;
             }
-            else if (arr[mid] == 1){
+            else if(arr[mid ]==1){
                 mid++;
             }
             else{
@@ -17,13 +17,12 @@ public class sortColorsDNFAlgo {
                 end--;
             }
         }
-
     }
-    public static void swap(int[] arr, int st, int end){
-        int temp = arr[st];
-        arr[st] = arr[end];
-        arr[end] = temp;
-    }
+     static void swap(int arr[],int n1,int n2){
+          int temp = arr[n1];
+          arr[n1] = arr[n2];
+          arr[n2]=temp;
+     }
 
     public static void main(String[] args) {
         int[] arr = {2,0,2,1,1,0};
@@ -34,3 +33,19 @@ public class sortColorsDNFAlgo {
 
     }
 }
+//        int st = 0 , mid = 0, end = arr.length-1;
+//        while (mid<=end){
+//        if(arr[mid]==0){
+//swap(arr,st,mid);
+//st++;
+//mid++;
+//        }
+//        else if (arr[mid] == 1){
+//mid++;
+//        }
+//        else{
+//swap(arr,mid,end);
+//end--;
+//        }
+//        }
+
