@@ -2,21 +2,19 @@
 
 public class sortColorsDNFAlgo {
     public static void DNFAlgo(int[] arr){
-        int st=0;int mid=0;int end=arr.length-1;
-        while(mid <=end){
-            if(arr[mid] == 0){
-                swap(arr,st,mid);
-                st++;
-                mid++;
-            }
-            else if(arr[mid ]==1){
-                mid++;
-            }
-            else{
-                swap(arr,mid,end);
-                end--;
-            }
-        }
+      int st = 0;int mid=0;int end=arr.length-1;
+      while(mid<=end){
+          if(arr[mid]==0){
+              swap(arr,st,mid);
+              st++;
+              mid++;
+          }else if(arr[mid]==1){
+              mid++;
+          }else{
+              swap(arr,end,mid);
+              end--;
+          }
+      }
     }
      static void swap(int arr[],int n1,int n2){
           int temp = arr[n1];
