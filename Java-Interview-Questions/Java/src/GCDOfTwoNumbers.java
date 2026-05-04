@@ -22,11 +22,23 @@ public class GCDOfTwoNumbers {
     }
 
     public static int gcdIterative(int a , int b){
-       while(b!=0){
-           int temp = b;
-           b = a%b;
-           a = temp;
-       }
-       return Math.abs(a);
+      while(b != 0){
+          int temp = b;
+          b = a%b;
+          a = temp;
+      }
+      return Math.abs(a);
     }
 }
+
+
+
+
+
+
+// while(b!=0){
+//int temp = b;
+//b = a%b;
+//a = temp;
+//       }
+//               return Math.abs(a);
