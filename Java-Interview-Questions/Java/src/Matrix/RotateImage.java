@@ -5,22 +5,41 @@ import java.util.Arrays;
 public class RotateImage {
     public static void rotate(int[][] matrix) {
         //swap transpose
-        for (int i = 0 ; i<matrix.length ; i++){
-            for (int j = i ; j<matrix.length ; j++){
+//        for (int i = 0 ; i<matrix.length ; i++){
+//            for (int j = i ; j<matrix.length ; j++){
+//                int temp = matrix[i][j];
+//                matrix[i][j] = matrix[j][i];
+//                matrix[j][i] = temp;
+//            }
+//        }
+//
+//        for (int i = 0 ; i<matrix.length ; i++){
+//            int st = 0 , end = matrix.length-1;
+//            while(st<end){
+//                int temp = matrix[i][st];
+//                matrix[i][st] = matrix[i][end];
+//                matrix[i][end] = temp;
+//                st++;
+//                end--;
+//            }
+//        }
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = i; j < matrix.length; j++) {
                 int temp = matrix[i][j];
                 matrix[i][j] = matrix[j][i];
                 matrix[j][i] = temp;
             }
         }
 
-        for (int i = 0 ; i<matrix.length ; i++){
-            int st = 0 , end = matrix.length-1;
-            while(st<end){
-                int temp = matrix[i][st];
-                matrix[i][st] = matrix[i][end];
-                matrix[i][end] = temp;
-                st++;
-                end--;
+        for (int i = 0; i < matrix.length; i++) {
+            int st = 0;
+            int end = matrix.length - 1;
+            while (st < end) {
+               int temp = matrix[i][st];
+               matrix[i][st] = matrix[i][end];
+               matrix[i][end] = temp;
+               st++;
+               end--;
             }
         }
     }
