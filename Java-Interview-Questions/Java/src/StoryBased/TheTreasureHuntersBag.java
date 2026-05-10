@@ -36,19 +36,17 @@ public class TheTreasureHuntersBag {
 
     // Toke sudhu ei function ta complete korte hobe
     public static long findMaxCoins(int n, int[] arr) {
-        // Write your code here
         long sum = 0;
-        long smax = 0;
-
-        for (int i=0; i < arr.length;i++){
+        long summax = 0;
+        for (int i=0;i<arr.length;i++){
             if(arr[i] > 0){
                 sum += arr[i];
-            }else if(arr[i] <= 0){
+            }else if(arr[i] < 0){
                 sum = 0;
             }
-            smax = Math.max(sum,smax);
+            summax = Math.max(summax,sum);
         }
-        return smax;
+        return summax;
     }
 
 
