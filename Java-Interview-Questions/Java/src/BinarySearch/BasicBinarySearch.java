@@ -6,12 +6,12 @@ public class BasicBinarySearch {
         System.out.println(BinarySearch(arr,5));
     }
     public static int BinarySearch(int[] arr,int target) {
-      int st = 0; int end = arr.length-1;
+      int st=0; int end = arr.length-1;
       while(st <= end){
-          int mid = st+(end-st)/2;
+          int mid = st+(end - st)/2;
           if(arr[mid] == target)return mid;
-          else if(arr[mid] < target) st = mid+1;
-          else end = mid-1;
+          else if(arr[mid] < target) st=mid+1;
+          else end=mid-1;
       }
       return -1;
     }

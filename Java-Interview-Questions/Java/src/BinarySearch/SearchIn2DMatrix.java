@@ -1,15 +1,15 @@
 package BinarySearch;
 
 public class SearchIn2DMatrix {
-    public static boolean searchMatrix(int[][] arr, int target) {
-         int st = 0;int end=arr[0].length-1;
-         int i = st; int j= end;
-         while (i< arr.length && j>=0){
+    static boolean searchMatrix(int arr[][], int target){
+        int st=0; int end = arr.length-1;
+        int i=st; int j=end;
+        while(i < arr.length && j>=0){
             if(arr[i][j] == target)return true;
             else if(arr[i][j] < target)i++;
             else j--;
-         }
-         return false;
+        }
+        return false;
     }
 
     public static void main(String[] args) {
@@ -20,7 +20,7 @@ public class SearchIn2DMatrix {
                 {10, 13, 14, 17, 24},
                 {18, 21, 23, 26, 30}
         };
-        System.out.println(searchMatrix(matrix,100));
+        System.out.println(searchMatrix(matrix,4));
     }
 }
 

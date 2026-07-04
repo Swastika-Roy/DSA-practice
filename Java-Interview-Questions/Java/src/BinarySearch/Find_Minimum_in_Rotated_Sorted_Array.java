@@ -4,14 +4,11 @@ import java.util.Arrays;
 
 public class Find_Minimum_in_Rotated_Sorted_Array {
       public static int findMin(int[] arr) {
-          int st = 0; int end = arr.length-1;
+          int st=0; int end=arr.length-1;
           while (st < end){
               int mid = st+(end-st)/2;
-              if(arr[mid] > arr[end]){
-                  st = mid+1;
-              }else if (arr[mid]<arr[end]){
-                  end = mid;
-              }
+              if(arr[mid] > arr[end])st = mid+1;
+              else if(arr[mid] < arr[end])end = mid;
               else end--;
           }
           return arr[st];
