@@ -6,13 +6,20 @@ public class CheckStringPangram {
         System.out.println(isPangram(s));
 
     }
-    public static boolean isPangram(String s){
+//    public static boolean isPangram(String s){
+//        HashSet<Character> hs = new HashSet<>();
+//        for (int i = 0 ; i<s.length() ; i++){
+//            hs.add(s.charAt(i));
+//        }
+//        return hs.size() == 26;
+//    }
+public static boolean isPangram(String s){
         HashSet<Character> hs = new HashSet<>();
-        for (int i = 0 ; i<s.length() ; i++){
+        for(int i=0; i < s.length(); i++){
             hs.add(s.charAt(i));
         }
-        return hs.size() == 26;
-    }
+        return hs.size()==26;
+}
 }
 //1832. Check if the Sentence Is Pangram
 
