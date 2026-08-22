@@ -1,50 +1,59 @@
 package cognizant;
 
 import java.util.LinkedHashMap;
+import java.util.LinkedHashMap;
 
 public class FrequencyOfFrequency {
+
     public static int findMaxFrequency(int n, String s) {
-        LinkedHashMap<Character,Integer> map1 = new LinkedHashMap<>();
-        LinkedHashMap<Integer,Integer> map2 = new LinkedHashMap<>();
 
-        char arr[] = s.toCharArray();
+        // Character -> frequency
+        LinkedHashMap<Character, Integer> map = new LinkedHashMap<>();
 
-        for(char ch : arr){
-            map1.put(ch,map1.getOrDefault(ch,0)+1);
+        // Frequency -> number of characters having that frequency
+        LinkedHashMap<Integer, Integer> map1 = new LinkedHashMap<>();
+
+        // Count frequency of each character
+        for (char ch : s.toCharArray()) {
+            map.put(ch, map.getOrDefault(ch, 0) + 1);
         }
 
-        for(char ch : map1.keySet()){
-            map2.put(map1.get(ch),map1.getOrDefault(map1.get(ch),0)+1);
+        // Count how many characters have each frequency
+        for (char ch : map.keySet()) {
+            int frequency = map.get(ch);
+            map1.put(frequency, map1.getOrDefault(frequency, 0) + 1);
         }
 
-        int max=-1;
+        int max = -1;
         int res = Integer.MAX_VALUE;
 
-        for (int i : map2.keySet()){
-            int curr = map2.get(i);
+        // Find the frequency which occurs most often
+        // If tied, choose the smaller frequency
+        for (int frequency : map1.keySet()) {
 
-           if(curr > max){
-               max = curr;
-               res = i;
-           }
-           if(curr == max){
-               res = Math.min(i,res);
-           }
+            int curr = map1.get(frequency);
+
+            if (curr > max) {
+                max = curr;
+                res = frequency;
+            } else if (curr == max) {
+                res = Math.min(res, frequency);
+            }
         }
+
         return res;
     }
 
     public static void main(String[] args) {
-        // Test Case 1
+
         String s1 = "ACABABCCA";
         System.out.println("--- Test Case 1 ---");
         System.out.println("Output: " + findMaxFrequency(s1.length(), s1));
-        // Expected Output: 2
+        // Expected: 2
 
-        // Test Case 2
         String s2 = "ACABDDABDCDACFAEGFDA";
         System.out.println("\n--- Test Case 2 ---");
         System.out.println("Output: " + findMaxFrequency(s2.length(), s2));
-        // Expected Output: 1
+        // Expected: 1
     }
 }
